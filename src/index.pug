@@ -54,15 +54,15 @@ html(lang="en")
                         .user__key #{item[0]}
                         .user__value #{item[1]}
               .about__right
-                span.about__prolog Привет, меня зовут
-                h2.section__title Владимир Астаханов
+                p.about__prolog Привет, меня зовут
+                h2.section-title.section-title--white Владимир Астаханов
                 .about__text Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui, officiis. Ipsa voluptatem distinctio optio similique debitis odit magni expedita. Quisquam, iusto. Ea magni et assumenda in voluptas totam, tempore veritatis?
                 .about__ps Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis odio aperiam consectetur, esse dignissimos possimus, sed unde eius officiis nihil magni eos atque asperiores reiciendis? Fuga quas veritatis reiciendis explicabo!
 
       section.values
         .container.values__container
           .values__title
-            h2.section__title Чем я могу быть полезен вам
+            h2.section-title.section-title--white Чем я могу быть полезен вам
             .values__desc
               p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 
@@ -82,6 +82,49 @@ html(lang="en")
                         svg(viewBox="0 0 200 200" preserveAspectRatio="none").skill__shape
                           circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position--under
                           circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position--above
-                          linear-gradient(to right, #ea7400, #f29400)
+                          //- linear-gradient(#ea7400, #f29400)
                         .skill__title #{skill}
+      section.works
+        .container
+          h2.section-title.section-title--dark Мои работы
+          .wrappwer-works
+            .works__left
+              .slider
+                +image("content/prev.jpg", "slider__fillpic")
+                .slider__preview
+                  ul.previews
+                    - for (var i = 0; i < 4; i++)
+                      li.previews__item
+                        +image("content/prev-min-1.jpg", "previews__pic")                                              
+                .slider__buttons
+                  .slider-button
+                    button.slider-buttons__item.slider-buttons__item--slide--prev 
+                    button.slider-buttons__item.slider-buttons__item--slide--next
 
+            .works__right
+              .works__tags
+                - var tags = ['html', 'css', 'javascript']
+                each tag in tags
+                  ul.tags
+                    li.tags__item #{tag}
+              .works__text
+                h3.works__title Сайт школы образования
+                .works__desc-text
+                  p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                a.iconed-link
+                  .iconed-link__icon
+                  .iconed-link__text
+      .wrapper-two-section
+        section.reviews
+          .carousel
+            ul.carousel__list
+              li.carousel__item
+                .review
+                  .review__text
+                    p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                  .review__person
+                    .avatar.avatar--review
+                      +image("content/user.jpg", "avatar__pic")
+                    p.review__person--name Ковальчук Дмитрий 
+                    p.review__person--post Основатель Loftschool
+        section.contacts
