@@ -116,15 +116,34 @@ html(lang="en")
                   .iconed-link__text
       .wrapper-two-section
         section.reviews
-          .carousel
-            ul.carousel__list
-              li.carousel__item
-                .review
-                  .review__text
-                    p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                  .review__person
-                    .avatar.avatar--review
-                      +image("content/user.jpg", "avatar__pic")
-                    p.review__person--name Ковальчук Дмитрий 
-                    p.review__person--post Основатель Loftschool
+          .container
+            h2.section-title.section-title--reviews Что обо мне говорят
+            .carousel
+              ul.carousel__list
+                li.carousel__item
+                  .review
+                    +icon("quote", "icon__quote")
+                    .review__text
+                      p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                    .review__person
+                      .avatar.avatar--review
+                        +image("content/user.jpg", "avatar__pic")
+                      .review__person--desc
+                        p.review__person--name Ковальчук Дмитрий 
+                        p.review__person--post Основатель Loftschool
+                li.carousel__item
+                  .review
+                    +icon("quote", "icon__quote")
+                    .review__text
+                      p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                    .review__person
+                      .avatar.avatar--review
+                        +image("content/user.jpg", "avatar__pic")
+                      .review__person--desc
+                        p.review__person--name Ковальчук Дмитрий 
+                        p.review__person--post Основатель Loftschool
+              .carousel__buttons
+                  .carousel-button
+                    button.carousel-buttons__item.carousel-buttons__item--slide--prev 
+                    button.carousel-buttons__item.carousel-buttons__item--slide--next
         section.contacts
