@@ -14,25 +14,15 @@ html(lang="en")
             .container.hero__container
               header.hero__header
                 .hero__logo
-                  .logo ВА
+                  .logo КБ
                 .hero__menu 
-                  nav.nav
-                  - var menu = ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться']
-                    ul.nav__list
-                      each item in menu
-                        li.nav__item              
-                          a(href="#").nav__link #{item}
+                  include ./components/nav.pug
                 .hero__links
-                  -var icons = ['insta', 'vk', 'github']
-                  ul.socials
-                    each item, index in icons
-                      li.socials__item(class=`${index === 1 ? 'active' : ''}`)
-                        a(href="#").socials__link                    
-                          +icon(`${item}`, 'socials__icon')
+                  include ./components/links.pug
               .hero__content
                 .user-info
                   h1.user-info__desc Личный сайт веб разработчика
-                  .user-info__username Владимир Астаханов
+                  .user-info__username Ксения Берлявская
               .hero__btns
                 .scroll-down-btns Скролл
             
@@ -47,7 +37,7 @@ html(lang="en")
                       var items = [
                         ['Проживаю:', 'Санкт-Петербург'],
                         ['Возраст:', '31 год'],
-                        ['Родился:', '21 мая 1988']
+                        ['Родилась:', '21 мая 1988']
                       ]
                     each item in items
                       li.user__desc-item
@@ -55,16 +45,16 @@ html(lang="en")
                         .user__value #{item[1]}
               .about__right
                 p.about__prolog Привет, меня зовут
-                h2.section-title.section-title--white Владимир Астаханов
-                .about__text Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui, officiis. Ipsa voluptatem distinctio optio similique debitis odit magni expedita. Quisquam, iusto. Ea magni et assumenda in voluptas totam, tempore veritatis?
-                .about__ps Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis odio aperiam consectetur, esse dignissimos possimus, sed unde eius officiis nihil magni eos atque asperiores reiciendis? Fuga quas veritatis reiciendis explicabo!
+                h2.section-title.section-title--white Ксения Берлявская
+                .about__text Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                .about__ps Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 
       section.values
         .container.values__container
           .values__title
             h2.section-title.section-title--white Чем я могу быть полезен вам
             .values__desc
-              p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+              p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 
           ul.users-skills    
             -
@@ -110,7 +100,7 @@ html(lang="en")
               .works__text
                 h3.works__title Сайт школы образования
                 .works__desc-text
-                  p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                  p Эта девушка проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
                 a.iconed-link
                   .iconed-link__icon
                   .iconed-link__text
@@ -124,10 +114,10 @@ html(lang="en")
                   .review
                     +icon("quote", "icon__quote")
                     .review__text
-                      p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                      p Эта девушка проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
                     .review__person
                       .avatar.avatar--review
-                        +image("content/user.jpg", "avatar__pic")
+                        +image("content/user-kd.jpg", "avatar__pic")
                       .review__person--desc
                         p.review__person--name Ковальчук Дмитрий 
                         p.review__person--post Основатель Loftschool
@@ -135,15 +125,55 @@ html(lang="en")
                   .review
                     +icon("quote", "icon__quote")
                     .review__text
-                      p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                      p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
                     .review__person
                       .avatar.avatar--review
-                        +image("content/user.jpg", "avatar__pic")
+                        +image("content/user-vs.jpg", "avatar__pic")
                       .review__person--desc
-                        p.review__person--name Ковальчук Дмитрий 
-                        p.review__person--post Основатель Loftschool
+                        p.review__person--name Владимир Сабанцев 
+                        p.review__person--post Преподаватель
               .carousel__buttons
                   .carousel-button
                     button.carousel-buttons__item.carousel-buttons__item--slide--prev 
                     button.carousel-buttons__item.carousel-buttons__item--slide--next
         section.contacts
+          .container
+            h2.section-title.section-title--contacts Связаться со мной
+            .form
+              form.form__elem(action="")
+                .form__row
+                  label.form__block
+                    +icon("user", "icon__form")
+                    .form__block-title Введите ваше имя
+                    input.form__input(type="text" name="name")
+                  label.form__block
+                    +icon("envelope", "icon__form")
+                    .form__block-title Введите ваш email
+                    input.form__input(type="text" name="email")
+                .form__row.form__row--textarea
+                  label.form__block--textarea(for='comment') Сообщение к письму
+                  +icon("message", "icon__form--textarea")
+                  textarea.form__input.form__input--textarea(name="comment" id="comment" row='2')
+                .form__row.form__row--btn
+                  button.btn.btn--submit(type="submit") отправить
+      footer.footer
+        .container 
+          .wrapper-footer 
+            .footer__left
+              .footer__copyright
+                p &copy 2019
+              .footer__author
+                p.footer__author--name Ксения Берлявская
+                p.footer__author--site-name 
+                  |Личный сайт 
+                  |веб-разработчика
+            .footer__right
+              .footer__nav
+                  include ./components/nav.pug
+              .footer__right--down
+                .footer__links
+                  p.footer__teaching Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool
+                  include ./components/links.pug
+                .footer__quote
+                  p.footer__quote--text  Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+                  span.footer__quote--author Martin Golding
