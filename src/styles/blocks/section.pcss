@@ -1,13 +1,40 @@
 .welcome-section {
-    background-image: linear-gradient(to top, rgba(27,31,34,1) 55%, rgba(27,31,34,0.6));
     color: white;
-    }
+    position: relative;
+}
+.bg-welcome__pic,
+.bg-values__pic {
+    position: absolute;
+    width: 100%;
+    min-height: 101%;
+    z-index: -5;
+}
+.bg-values-hands__pic {
+    position: absolute;
+    min-height: 110%;
+    z-index: -4;
+}
+.bg-leaves__pic {
+    position: absolute;
+    right: 0;
+    z-index: -4;
+}
+.bg-forest__pic {
+    position: absolute;
+    min-height: 101%;
+    width: 100%;
+    z-index: -5;
+}
+.hero {
+    margin-bottom: 170px;
+}
 .works, .values {
-    margin-bottom: 200px;
+    padding-bottom: 200px;
 }
 .values {
+    position: relative;
     padding-bottom: 150px;
-    background-image: linear-gradient(to bottom, rgba(27,31,34,1) 55%, rgba(27,31,34,0.6));
+    margin-bottom: 200px;    
     color: white;
 }
 .reviews {
@@ -18,7 +45,8 @@
     padding-bottom: 200px;
 }
 .wrapper-two-section {
-    background-image: linear-gradient(to bottom, rgba(27,31,34,1) 55%, rgba(27,31,34,0.6));
+    background-image: linear-gradient(90deg, rgba(#000000, 0.8), rgba(#ffffff, 0));
+    position: relative;
     color: white;
 }
 .footer {

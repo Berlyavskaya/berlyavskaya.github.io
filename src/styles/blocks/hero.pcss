@@ -27,9 +27,30 @@
   align-items: center;
   justify-content: center;
 }
-
 .hero__btns {
   display: flex;
   justify-content: center;
-  padding: 50px 0;
+}
+.scroll-down-btns {
+  position: relative;
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  padding-right: 30px;
+
+}
+.scroll-down-btns::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 60px;
+  width: 19px;
+  height: 30px;
+  background: svg-load('scroll.svg', fill=#ffffff, width=100%, height=100%);
+  background-repeat: no-repeat;
 }

@@ -1,4 +1,6 @@
 .tags__item {
+    background-color: #F1F5F9;
+    border-radius: 20px;
     padding: 18px 23px 16px 19px;       
     font-family: 'Open Sans';
     font-size: 15px;
@@ -9,9 +11,13 @@
     text-align: left;
     color: rgba(40, 51, 64, 0.7);
     text-transform: uppercase;
-    
+    margin-right: 10px;
+}
+.tags__item:last-child {
+    margin-right: 0;
 }
 .tags {
-    background-color: #F1F5F9;
-    border-radius: 20px;
+    
+    display: flex;
+    justify-content: space-between;
 }

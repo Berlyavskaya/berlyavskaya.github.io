@@ -7,9 +7,11 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title Portfolio | main page
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   body
     .wrapper
       .welcome-section
+          +image("bg-welcome.jpg", "bg-welcome__pic")
           section.hero
             .container.hero__container
               header.hero__header
@@ -20,11 +22,12 @@ html(lang="en")
                 .hero__links
                   include ./components/links.pug
               .hero__content
-                .user-info
-                  h1.user-info__desc Личный сайт веб разработчика
-                  .user-info__username Ксения Берлявская
+                .container__user-info
+                  .user-info
+                    h1.user-info__desc Личный сайт веб разработчика
+                    .user-info__username Ксения Берлявская
               .hero__btns
-                .scroll-down-btns Скролл
+                button.scroll-down-btns Скролл
             
           section.about
             .container.about__container
@@ -32,17 +35,17 @@ html(lang="en")
                 .user
                   .avatar.user__avatar
                     +image("content/user.jpg", "avatar__pic")
-                  ul.user__desc
+                  table.user__desc
                     -
-                      var items = [
+                      var tr = [
                         ['Проживаю:', 'Санкт-Петербург'],
                         ['Возраст:', '31 год'],
                         ['Родилась:', '21 мая 1988']
                       ]
-                    each item in items
-                      li.user__desc-item
-                        .user__key #{item[0]}
-                        .user__value #{item[1]}
+                    each item in tr
+                      tr.user__desc-item
+                        td.user__key #{item[0]}
+                        td.user__value #{item[1]}
               .about__right
                 p.about__prolog Привет, меня зовут
                 h2.section-title.section-title--white Ксения Берлявская
@@ -50,6 +53,8 @@ html(lang="en")
                 .about__ps Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 
       section.values
+        +image("bg-values.jpg", "bg-values__pic")
+        +image("bg-values-hands.png", "bg-values-hands__pic")
         .container.values__container
           .values__title
             h2.section-title.section-title--white Чем я могу быть полезен вам
@@ -93,49 +98,50 @@ html(lang="en")
 
             .works__right
               .works__tags
-                - var tags = ['html', 'css', 'javascript']
-                each tag in tags
-                  ul.tags
+                ul.tags
+                  - var tags = ['html', 'css', 'javascript']
+                  each tag in tags
                     li.tags__item #{tag}
               .works__text
                 h3.works__title Сайт школы образования
                 .works__desc-text
                   p Эта девушка проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                a.iconed-link
-                  .iconed-link__icon
-                  .iconed-link__text
+                a(href="#").iconed-link Посмотреть сайт
       .wrapper-two-section
+        +image("bg-leaves.png", "bg-leaves__pic")
+        +image("bg-forest.jpg", "bg-forest__pic")
         section.reviews
-          .container
-            h2.section-title.section-title--reviews Что обо мне говорят
+          .container            
             .carousel
+              h2.section-title.section-title--reviews Что обо мне говорят
+              .carousel__buttons
+                  .carousel-button
+                    button.carousel-buttons__item.carousel-buttons__item--slide--prev 
+                    button.carousel-buttons__item.carousel-buttons__item--slide--next
               ul.carousel__list
                 li.carousel__item
                   .review
                     +icon("quote", "icon__quote")
                     .review__text
                       p Эта девушка проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                    .review__person
-                      .avatar.avatar--review
+                    .card-person
+                      .avatar.avatar--card-person
                         +image("content/user-kd.jpg", "avatar__pic")
-                      .review__person--desc
-                        p.review__person--name Ковальчук Дмитрий 
-                        p.review__person--post Основатель Loftschool
+                      .card-person--desc
+                        p.card-person--name Ковальчук Дмитрий 
+                        p.card-person--post Основатель Loftschool
                 li.carousel__item
                   .review
                     +icon("quote", "icon__quote")
                     .review__text
                       p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-                    .review__person
-                      .avatar.avatar--review
+                    .card-person
+                      .avatar.avatar--card-person
                         +image("content/user-vs.jpg", "avatar__pic")
                       .review__person--desc
-                        p.review__person--name Владимир Сабанцев 
-                        p.review__person--post Преподаватель
-              .carousel__buttons
-                  .carousel-button
-                    button.carousel-buttons__item.carousel-buttons__item--slide--prev 
-                    button.carousel-buttons__item.carousel-buttons__item--slide--next
+                        p.card-person--name Владимир Сабанцев 
+                        p.card-person--post Преподаватель
+              
         section.contacts
           .container
             h2.section-title.section-title--contacts Связаться со мной
@@ -152,7 +158,7 @@ html(lang="en")
                     input.form__input(type="text" name="email")
                 .form__row.form__row--textarea
                   label.form__block--textarea(for='comment') Сообщение к письму
-                  +icon("message", "icon__form--textarea")
+                    +icon("message", "icon__form--textarea")
                   textarea.form__input.form__input--textarea(name="comment" id="comment" row='2')
                 .form__row.form__row--btn
                   button.btn.btn--submit(type="submit") отправить
@@ -163,10 +169,11 @@ html(lang="en")
               .footer__copyright
                 p &copy 2019
               .footer__author
-                p.footer__author--name Ксения Берлявская
-                p.footer__author--site-name 
-                  |Личный сайт 
-                  |веб-разработчика
+                .user-info.user-info--footer
+                    h1.user-info__desc.user-info__desc--footer         
+                      |Личный сайт 
+                      |веб-разработчика
+                    .user-info__username.user-info__username--footer Ксения Берлявская
             .footer__right
               .footer__nav
                   include ./components/nav.pug
