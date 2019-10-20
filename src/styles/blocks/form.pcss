@@ -1,0 +1,83 @@
+.form {    
+    max-width: 880px;
+}
+.form__elem {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    /* background-color: red; */
+}
+.form__row {    
+    display: flex;
+    justify-content: space-between;    
+    flex-wrap: nowrap;
+    margin-bottom: 40px;
+}
+.form__row--textarea{
+    position: relative;
+    flex-direction: column;
+    height: 100%;
+}
+.form__row:last-child {
+    margin-bottom: 0;
+}
+.form__block {
+    display: flex;
+    flex-direction: column;
+    height: 80px;
+    width: 45%;
+    position: relative;
+    border-bottom: 2px solid #fff;    
+}
+.form__block-title, .form__row--textarea {
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2;
+    color: rgba(255, 255, 255, 0.3);
+}
+.form__input {
+    border: none;    
+    align-self: flex-end;
+    padding: 0px;
+    height: 100%;
+    width: 90%;
+    box-sizing: border-box;
+    color: #fff;
+    align-self: flex-end;
+    background: transparent;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    line-height: 2;
+}
+.form__input--textarea {
+    resize: vertical;
+    height: 72px; 
+    width: 100%;
+    border-bottom: 2px solid #fff;   
+    padding-left: 5%; 
+    background: transparent;   
+}
+.icon__form {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    fill: #fff;
+    opacity: 0.3;
+}
+
+.icon__form--textarea {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    fill: #fff;
+    opacity: 0.3;
+}

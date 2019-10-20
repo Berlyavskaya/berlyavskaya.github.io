@@ -1,0 +1,107 @@
+.slider {
+    position: relative;    
+    max-width: 975px;
+}
+.slider__preview {
+    position: absolute;
+    top: 71%;
+    right: 0; 
+}
+.slider__fillpic {
+    object-fit: cover;
+}
+.slider__buttons {
+    position: absolute;
+    top: 71%;
+    right: -50px;  
+    width: 50px;
+    height: 100px;
+    box-sizing: border-box;
+}
+.slider__preview--active {
+    border: solid 3px #f29400;
+    background-color: #b6b6b6;
+}
+.previews {
+    display: flex;
+}
+.previews__item {
+    width: 178px;
+    height: 100px;
+}
+.wrappwer-works {
+    display: flex;
+}
+.works__left {
+    width: 66%;
+}
+.works__right {
+    width: 34%;
+    padding-left: 157px;
+}
+.works__tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+.works__title {
+    font-family: 'Open Sans';
+    font-size: 30px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    text-align: left;
+    color: #2d3c4e;
+    margin-bottom: 40px;
+}
+.works__desc-text {
+    font-size: 16px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.88;
+    letter-spacing: normal;
+    text-align: left;
+    color: rgba(43, 57, 72, 0.7);
+    margin-bottom: 50px;
+}
+.iconed-link {
+    position: relative;
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+    text-decoration: none;
+
+    font-size: 18px;
+    font-weight: bold;
+    color: #4b6fd7;
+    padding-left: 35px;
+}
+.iconed-link::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    background: svg-load('link.svg', fill=#4b6fd7, width=100%, height=100%);
+    background-repeat: no-repeat;
+}
+.iconed-link:link { 
+    text-decoration: none; /* Убирает подчеркивание для ссылок */
+} 
+.iconed-link:visited { 
+    text-decoration: none; 
+} 
+.iconed-link:active { 
+    text-decoration: none; 
+}
+.iconed-link:hover {
+    text-decoration: underline; /* Делает ссылку подчеркнутой при наведении на нее курсора */
+    color: rgba(#4b6fd7,0.7); /* Цвет ссылки */
+} 
