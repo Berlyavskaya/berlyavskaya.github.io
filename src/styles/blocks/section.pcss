@@ -1,13 +1,19 @@
 .welcome-section {
     color: white;
     position: relative;
+    overflow: hidden;
+    height: 1450px;
+    background-image: linear-gradient(0deg,#1b1f22 40%,rgba(33,36,39,0));
+    z-index: -1;
 }
 .bg-welcome__pic,
-.bg-values__pic {
+.bg-values__pic,
+.bg-about__pic {
     position: absolute;
     width: 100%;
     min-height: 101%;
     z-index: -5;
+    top: -1px;
 }
 .bg-values-hands__pic {
     position: absolute;
@@ -28,6 +34,7 @@
 .hero {
     margin-bottom: 170px;
 }
+
 .works, .values {
     padding-bottom: 200px;
 }
