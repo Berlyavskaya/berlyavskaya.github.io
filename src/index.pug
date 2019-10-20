@@ -67,28 +67,11 @@ html(lang="en")
         +image("bg-values-hands.png", "bg-values-hands__pic")
         .container.values__container
           .values__title
-            h2.section-title.section-title--white Чем я могу быть полезен вам
+            h2.section-title.section-title--white Чем я могу быть полезна вам
             .values__desc
               p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-
-          ul.users-skills    
-            -
-              var skills = [
-                ['Front-end', ['html', 'css', 'Javascript', 'Jquery и Vue.js']],
-                ['Workflow', ['GIT', 'Terminal', 'Gulp', 'Webpack']]
-              ]
-            each item in skills
-              li.user-skill__item.skills-row
-                h3.skills-row__title #{item[0]}
-                ul.skills-row__list
-                  each skill in item[1]
-                    li.skills-row__item
-                      .skill
-                        svg(viewBox="0 0 200 200" preserveAspectRatio="none").skill__shape
-                          circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position--under
-                          circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position--above
-                          //- linear-gradient(#ea7400, #f29400)
-                        .skill__title #{skill}
+          #skills-component
+            include ./components/skills.pug
       section.works
         .container
           h2.section-title.section-title--dark Мои работы
@@ -194,3 +177,6 @@ html(lang="en")
                 .footer__quote
                   p.footer__quote--text  Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
                   span.footer__quote--author Martin Golding
+
+
+    //- include ./components/entry.pug
