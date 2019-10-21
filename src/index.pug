@@ -70,36 +70,17 @@ html(lang="en")
             h2.section-title.section-title--white Чем я могу быть полезна вам
             .values__desc
               p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+
           #skills-component
             include ./components/skills.pug
+
       section.works
         .container
           h2.section-title.section-title--dark Мои работы
-          .wrappwer-works
-            .works__left
-              .slider
-                +image("content/prev.jpg", "slider__fillpic")
-                .slider__preview
-                  ul.previews
-                    - for (var i = 0; i < 4; i++)
-                      li.previews__item
-                        +image("content/prev-min-1.jpg", "previews__pic")                                              
-                .slider__buttons
-                  .slider-button
-                    button.slider-buttons__item.slider-buttons__item--slide--prev 
-                    button.slider-buttons__item.slider-buttons__item--slide--next
 
-            .works__right
-              .works__tags
-                ul.tags
-                  - var tags = ['html', 'css', 'javascript']
-                  each tag in tags
-                    li.tags__item #{tag}
-              .works__text
-                h3.works__title Сайт школы образования
-                .works__desc-text
-                  p Эта девушка проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                a(href="#").iconed-link Посмотреть сайт
+          #works-component
+            include ./components/works.pug
+
       .wrapper-two-section
         +image("bg-leaves.png", "bg-leaves__pic")
         +image("bg-forest.jpg", "bg-forest__pic")
