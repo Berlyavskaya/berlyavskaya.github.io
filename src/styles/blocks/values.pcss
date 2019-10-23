@@ -15,9 +15,17 @@
         justify-content: center;
         width: 56%;
       }
+    @include phones {
+        width: 89%;    
+        text-align: left;
+    }
 }
 .section-title--values {
     @include tablets {
         width: 60%;
       }
+    @include phones {
+        font-size: 24px;
+        width: 100%;
+    }
 }

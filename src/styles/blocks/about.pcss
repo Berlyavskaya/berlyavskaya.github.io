@@ -1,12 +1,15 @@
 .about {  
   padding-bottom: 120px;
   color: white;
-  background-image: linear-gradient(0deg,#1b1f22 40%,rgba(33,36,39,0));
+  background-image: linear-gradient(0deg,#1b1f22 7%,rgba(33,36,39,0.5) 76%);
 }
 .about__container {
   display: flex;
   justify-content: space-between;
   max-width: 960px;
+  @include phones {
+    flex-wrap: wrap;
+  }
 }
 
 .about__left {
@@ -17,11 +20,19 @@
   font-style: normal;
   font-stretch: normal;
   box-sizing: border-box;
+  @include phones {
+    flex-wrap: wrap;
+    width: 100%;
+  }
 }
 
 .about__right {
   color: rgba(255, 255, 255, 0.5);
   width: 58%;
+  @include phones {
+    flex-wrap: wrap;
+    width: 100%;
+  }
 }
 
 .about__text, .about__ps {
@@ -35,6 +46,9 @@
 }
 .about__text {
   margin-bottom: 100px;
+  @include phones {
+    margin-bottom: 50px;
+  }
 }
 .about__ps {
   position: relative;

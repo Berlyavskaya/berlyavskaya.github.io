@@ -17,12 +17,11 @@
 .bg-about__pic {
     height: 29%;
 }
-.bg-welcome__pic{
+
+.bg-welcome__pic {
     @include desktopHd {
         display: none;
-      }
-}
-.bg-welcome__pic {
+    }
     @include desktop {
         display: block;
         z-index: -1;
@@ -37,13 +36,13 @@
         top: 0;
         left: 0;
       }
-      @include phones {
+    @include phones {
         display: block;
         z-index: -1;
         position: absolute;
-        top: 0;
-        left: 0;
-      }
+        transform: scale(2.0);
+        top: 10%;
+    }
       
 }
 .bg-values-hands__pic {
@@ -56,6 +55,9 @@
       }
     @include tablets {        
         transform: rotate(-90deg) scale(.6) translateX(-34%) translateY(15%);
+    }
+    @include phones {
+        transform: rotate(-90deg) scaleY(0.25) scaleX(0.55)translateX(-425px) translateY(0%);
     }
 }
 .bg-leaves__pic {
@@ -71,6 +73,9 @@
         height: 86%;
         top: -10%;
     }
+    @include phones {
+        display: none;
+    }
 }
 .bg-forest__pic {
     position: absolute;
@@ -79,6 +84,9 @@
     z-index: -5;
     @include tablets {
         transform: scaleX(1.5);
+    }
+    @include phones {
+        transform: scaleX(4);
     }
     
 }
@@ -92,18 +100,29 @@
 .works, .values {
     padding-bottom: 200px;
 }
+.works {
+    @include phones {
+        padding-bottom: 100px;
+    }
+    
+}
 .values {
     position: relative;
     padding-bottom: 150px;
     padding-top: 150px;
     margin-bottom: 200px;    
-    color: white;
-    
+    color: white;    
     background-image: linear-gradient(180deg,#1b1f22 4%,rgba(33,36,39,0) 17%);
     @include tablets {
         padding-top: 120px;
         padding-bottom: 350px;
       }
+    @include phones {
+        padding-top: 120px;
+        padding-bottom: 180px;
+        margin-bottom: 100px; 
+        overflow: hidden;
+    }
 }
 .reviews {
     padding-top: 150px;
@@ -111,6 +130,9 @@
 }
 .contacts {
     padding-bottom: 200px;
+    @include phones {
+        padding-bottom: 110px;
+    }
 }
 .wrapper-two-section {
     background-image: linear-gradient(90deg, rgba(#000000, 0.8), rgba(#ffffff, 0));

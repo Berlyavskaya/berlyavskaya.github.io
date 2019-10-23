@@ -3,6 +3,9 @@
   flex-direction: column;
   justify-content: space-between; 
   height: 100%;
+  @include phones {
+    padding-bottom: 40px;
+  }
 }
 
 .user__avatar {
@@ -16,6 +19,14 @@
 .user__desc-item {
     display: flex;
     justify-content: flex-start;
+    @include phones {
+        margin-bottom: 10px;
+      }
+}
+.user__desc-item:last-child {
+    @include phones {
+        margin-bottom: 0;
+      }
 }
 .user__key {
     width: 50%;

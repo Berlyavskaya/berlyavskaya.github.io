@@ -6,6 +6,9 @@
     position: absolute;
     bottom: 60px;
     right: 0; 
+    @include phones {
+        display: none;
+      }
 }
 .slider__fillpic {
     object-fit: cover;
@@ -17,6 +20,9 @@
     width: 50px;
     height: 100px;
     box-sizing: border-box;
+    @include phones {
+        right: 0;
+      }
 }
 
 .previews {
@@ -76,6 +82,10 @@
         width: 85%;
         margin-bottom: 65px;
     }
+    @include phones {
+        width: 118%;
+        margin-left: -24px;
+      }
 }
 .works__right {
     width: 34%;
@@ -90,6 +100,7 @@
         display: flex;
         flex-wrap: wrap;    
     }
+    
 }
 .works__tags {
     display: flex;
@@ -103,6 +114,10 @@
         justify-content: center;
         display: flex;
         flex-wrap: wrap;    
+    }
+    @include phones {
+        width: 100%;
+        justify-content: flex-start;
     }
 }
 .works__title {
@@ -129,6 +144,9 @@
     margin-bottom: 50px;
     @include tablets {  
         text-align: center;  
+    }
+    @include phones {
+        text-align: left;
     }
 }
 .iconed-link {
