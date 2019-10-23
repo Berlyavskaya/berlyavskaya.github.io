@@ -8,4 +8,16 @@
     align-self: center;
     max-width: 590px;
     margin-bottom: 90px;
+    @include tablets {
+        flex-wrap: wrap;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        width: 56%;
+      }
+}
+.section-title--values {
+    @include tablets {
+        width: 60%;
+      }
 }

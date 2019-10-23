@@ -4,7 +4,15 @@
     position: absolute;
     top: 0;
     left: 0;
-   
+    @include desktop {
+        display: none;
+      }
+    @include tablets {
+    display: none;
+    }
+    @include phones {
+        display: none;
+        }
 }
 .parallax__layer {
     position: absolute;

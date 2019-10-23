@@ -1,5 +1,11 @@
 .skills {
   width: 60%;
+  @include desktop {
+    width: 66%;
+  }
+  @include tablets {
+    width: 87%;
+  }
   @include phones {
     text-align: center;
   }
@@ -12,6 +18,9 @@
   margin-bottom: 26px;
   font-size: 24px;
   font-weight: 700;
+  @include tablets {
+    text-align: center;
+  }
 }
 
 .skills-row__list {
@@ -20,6 +29,9 @@
   width: 100%;
   margin-left: -4%;
   @include phones {
+    justify-content: center;
+  }
+  @include tablets {
     justify-content: center;
   }
 }

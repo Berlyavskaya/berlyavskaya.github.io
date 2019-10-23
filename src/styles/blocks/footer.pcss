@@ -9,31 +9,65 @@
     margin-right: 140px;
     display: flex;
     justify-content: space-between;
+    @include desktop {
+        flex-wrap: wrap;
+        width: 26%;
+        margin-right: 86px;
+    }
+    @include tablets {  
+        width: 24%; 
+        align-content: flex-start; 
+    }
 }
 .footer__copyright {
     font-size: 48px;
     color: rgba(255, 255, 255, 0.1);
     line-height: 1;
+    width: 130%;
+    @include tablets {  
+        margin-bottom: 30px; 
+    }
 }
     
 .footer__right {
     flex-direction: row;
     flex-wrap: wrap;
+    @include tablets {  
+        width: 69%;  
+    }
 }
 .footer__right--down {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     color: rgba(255, 255, 255, 0.3);
+    @include tablets {
+        display: flex;
+        flex-wrap: wrap;
+    } 
 }
 .footer__teaching {
     margin-bottom: 40px;
 }
 .footer__links {
     max-width: 32%;
+    @include desktop {
+        max-width: 40%;
+      }
+    @include tablets {
+        max-width: 81%;
+        margin-bottom: 60px;        
+    }
+
 }
 .footer__quote {
     max-width: 45%;
+    @include desktop {
+        max-width: 51%;
+      }
+    @include tablets {
+        max-width: 93%;
+    }
 }
 .footer__quote--text {
     padding-bottom: 35px;

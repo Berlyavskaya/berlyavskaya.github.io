@@ -48,5 +48,5 @@ script(type="text/x-template")#slider-info
 
 script(type="text/x-template")#slider-tags                    
     .works__tags
-        ul.tags(v-for="tag in tags")
-            li.tags__item {{tag}}
+        ul.tags
+            li.tags__item(v-for="tag in tags") {{tag}}

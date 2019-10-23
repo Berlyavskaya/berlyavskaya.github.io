@@ -15,6 +15,9 @@
 }
 .hero__menu {
   margin: 0 20px;
+  @include tablets {
+    display: none;
+  }
 }
 
 .hero__header {
@@ -26,10 +29,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  @include tablets {
+    align-items: flex-start;
+    margin-top: 7%;
+  }
 }
 .hero__btns {
   display: flex;
   justify-content: center;
+  @include tablets {
+    display: none;
+  }
 }
 .scroll-down-btns {
   position: relative;

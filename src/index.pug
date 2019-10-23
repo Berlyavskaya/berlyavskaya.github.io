@@ -11,6 +11,7 @@ html(lang="en")
   body
     .wrapper
       .welcome-section
+        +image("bg-welcome.jpg", "bg-welcome__pic")
         .parallax__wrapper
           .parallax__layer(data-speed ="0.1")
             +image("parallax/p1.png", "parallax__image")
@@ -30,16 +31,18 @@ html(lang="en")
                 include ./components/nav.pug
               .hero__links
                 include ./components/links.pug
+              a(href="#").hamburger-menu-link
+                .hamburger-menu-link__bars
             .hero__content
               .container__user-info
                 .user-info
                   h1.user-info__desc Личный сайт веб разработчика
-                  .user-info__username Ксения Берлявская
+                  p.user-info__username Ксения Берлявская
             .hero__btns
               button.scroll-down-btns Скролл
           
         section.about
-          //- +image("bg-about.jpg", "bg-about__pic")
+          +image("bg-about.jpg", "bg-about__pic")
           .container.about__container
             .about__left
               .user
@@ -67,7 +70,7 @@ html(lang="en")
         +image("bg-values-hands.png", "bg-values-hands__pic")
         .container.values__container
           .values__title
-            h2.section-title.section-title--white Чем я могу быть полезна вам
+            h2.section-title.section-title--white.section-title--values Чем я могу быть полезна вам
             .values__desc
               p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 
@@ -85,40 +88,14 @@ html(lang="en")
         +image("bg-leaves.png", "bg-leaves__pic")
         +image("bg-forest.jpg", "bg-forest__pic")
         section.reviews
-          .container            
-            .carousel
-              h2.section-title.section-title--reviews Что обо мне говорят
-              .carousel__buttons
-                  .carousel-button
-                    button.carousel-buttons__item.carousel-buttons__item--slide--prev 
-                    button.carousel-buttons__item.carousel-buttons__item--slide--next
-              ul.carousel__list
-                li.carousel__item
-                  .review
-                    +icon("quote", "icon__quote")
-                    .review__text
-                      p Эта девушка проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                    .card-person
-                      .avatar.avatar--card-person
-                        +image("content/user-kd.jpg", "avatar__pic")
-                      .card-person--desc
-                        p.card-person--name Ковальчук Дмитрий 
-                        p.card-person--post Основатель Loftschool
-                li.carousel__item
-                  .review
-                    +icon("quote", "icon__quote")
-                    .review__text
-                      p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-                    .card-person
-                      .avatar.avatar--card-person
-                        +image("content/user-vs.jpg", "avatar__pic")
-                      .card-person--desc
-                        p.card-person--name Владимир Сабанцев 
-                        p.card-person--post Преподаватель
-              
+          .container
+          
+            #carousel-container 
+              include ./components/carousel.pug      
+            
         section.contacts
           .container
-            h2.section-title.section-title--contacts Связаться со мной
+            h2.section-title.section-title--contacts.section-title--contacts Связаться со мной
             .form
               form.form__elem(action="")
                 .form__row

@@ -2,37 +2,91 @@
     color: white;
     position: relative;
     overflow: hidden;
-    height: 1450px;
-    background-image: linear-gradient(0deg,#1b1f22 40%,rgba(33,36,39,0));
+    background-color: #1b1f22;
     z-index: -1;
+    
 }
-.bg-welcome__pic,
 .bg-values__pic,
 .bg-about__pic {
     position: absolute;
     width: 100%;
     min-height: 101%;
-    z-index: -5;
-    top: -1px;
+    z-index: -5;   
+    top: -1px; 
+}
+.bg-about__pic {
+    height: 29%;
+}
+.bg-welcome__pic{
+    @include desktopHd {
+        display: none;
+      }
+}
+.bg-welcome__pic {
+    @include desktop {
+        display: block;
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      @include tablets {
+        display: block;
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      @include phones {
+        display: block;
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      
 }
 .bg-values-hands__pic {
     position: absolute;
-    min-height: 110%;
-    z-index: -4;
+    height: 100%;
+    z-index: 1;
+    @include desktop {
+        height: 80%;
+        top: 33%;
+      }
+    @include tablets {        
+        transform: rotate(-90deg) scale(.6) translateX(-34%) translateY(15%);
+    }
 }
 .bg-leaves__pic {
     position: absolute;
-    right: 0;
+    top: -16%;
+    right: -9%;
     z-index: -4;
+    @include desktop {
+        right: -19%;
+    }
+    @include tablets {
+        right: -38%;
+        height: 86%;
+        top: -10%;
+    }
 }
 .bg-forest__pic {
     position: absolute;
     min-height: 101%;
     width: 100%;
     z-index: -5;
+    @include tablets {
+        transform: scaleX(1.5);
+    }
+    
 }
 .hero {
-    margin-bottom: 170px;
+    margin-bottom: 186px;
+    @include tablets {
+        margin-bottom: 2.5rem;
+    }
 }
 
 .works, .values {
@@ -41,8 +95,15 @@
 .values {
     position: relative;
     padding-bottom: 150px;
+    padding-top: 150px;
     margin-bottom: 200px;    
     color: white;
+    
+    background-image: linear-gradient(180deg,#1b1f22 4%,rgba(33,36,39,0) 17%);
+    @include tablets {
+        padding-top: 120px;
+        padding-bottom: 350px;
+      }
 }
 .reviews {
     padding-top: 150px;
