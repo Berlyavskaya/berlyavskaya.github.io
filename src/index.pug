@@ -15,11 +15,11 @@ html(lang="en")
         .parallax__wrapper
           .parallax__layer(data-speed ="0.1")
             +image("parallax/p1.png", "parallax__image")
-          .parallax__layer(data-speed ="0.15")
+          .parallax__layer(data-speed ="0.12")
             +image("parallax/p2.png", "parallax__image")
-          .parallax__layer(data-speed ="0.2")
+          .parallax__layer(data-speed ="0.15")
             +image("parallax/p3.png", "parallax__image")
-          .parallax__layer(data-speed ="0.25")
+          .parallax__layer(data-speed ="0.18")
             +image("parallax/p4.png", "parallax__image")    
 
         section.hero
@@ -42,7 +42,6 @@ html(lang="en")
               button.scroll-down-btns Скролл
           
         section.about
-          +image("bg-about.jpg", "bg-about__pic")
           .container.about__container
             .about__left
               .user
@@ -88,14 +87,67 @@ html(lang="en")
         +image("bg-leaves.png", "bg-leaves__pic")
         +image("bg-forest.jpg", "bg-forest__pic")
         section.reviews
-          .container
-          
-            #carousel-container 
-              include ./components/carousel.pug      
-            
+          .container.carousel-container          
+            .carousel#carousel-container
+              .reviews__heder
+                h2.section-title.section-title--reviews Что обо мне говорят
+                .carousel__buttons
+                    .carousel-button
+                        button(@click="previous()" ref='buttun-prev').carousel-buttons__item.carousel-buttons__item--slide--prev 
+                        button(@click="next()" ref='buttun-next').carousel-buttons__item.carousel-buttons__item--slide--next
+              
+              flickity.carousel__list(ref="flickity" :options="flickityOptions")                
+                  .carousel__item
+                      .review
+                          +icon("quote", "icon__quote")
+                          .review__text
+                              p 1 Эта девушка проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                          .card-person
+                              .avatar.avatar--card-person
+                                  +image("content/user-kd.jpg", "avatar__pic")
+                              .card-person--desc
+                                  p.card-person--name Ковальчук Дмитрий 
+                                  p.card-person--post Основатель Loftschool
+
+                  .carousel__item
+                      .review
+                          +icon("quote", "icon__quote")
+                          .review__text
+                              p 2 Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                          .card-person
+                              .avatar.avatar--card-person
+                                  +image("content/user-vs.jpg", "avatar__pic")
+                              .card-person--desc
+                                  p.card-person--name Владимир Сабанцев 
+                                  p.card-person--post Преподаватель
+
+                  .carousel__item
+                      .review
+                          +icon("quote", "icon__quote")
+                          .review__text
+                              p 3 Эта девушка проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                          .card-person
+                              .avatar.avatar--card-person
+                                  +image("content/user-kd.jpg", "avatar__pic")
+                              .card-person--desc
+                                  p.card-person--name Ковальчук Дмитрий 
+                                  p.card-person--post Основатель Loftschool
+
+                  .carousel__item
+                      .review
+                          +icon("quote", "icon__quote")
+                          .review__text
+                              p 4 Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                          .card-person
+                              .avatar.avatar--card-person
+                                  +image("content/user-vs.jpg", "avatar__pic")
+                              .card-person--desc
+                                  p.card-person--name Владимир Сабанцев 
+                                  p.card-person--post Преподаватель      
+                  
         section.contacts
           .container
-            h2.section-title.section-title--contacts.section-title--contacts Связаться со мной
+            h2.section-title.section-title--contacts Связаться со мной
             .form
               form.form__elem(action="")
                 .form__row

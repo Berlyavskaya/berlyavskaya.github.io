@@ -1,7 +1,8 @@
+import Vue from 'vue';
 import Flickity from 'vue-flickity';
 
 new Vue({
-  template: "#carousel-review",
+  // template: "#carousel-review",
   el: "#carousel-container",
   components: {
     Flickity
@@ -10,11 +11,9 @@ new Vue({
   data() {
     return {
       flickityOptions: {
-        initialIndex: 3,
         prevNextButtons: false,
         pageDots: false,
-        wrapAround: true,
-        groupCells: 2
+        groupCells: true
       }
     }
   },
@@ -27,5 +26,10 @@ new Vue({
     previous() {
       this.$refs.flickity.previous();
     }
+  },
+  mounted(){
+    this.$refs.flickity.on('dragEnd', function(event,pointer){
+      console.log(event)
+    })
   }
 });

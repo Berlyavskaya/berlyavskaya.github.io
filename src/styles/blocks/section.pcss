@@ -6,8 +6,7 @@
     z-index: 0;
     
 }
-.bg-values__pic,
-.bg-about__pic {
+.bg-values__pic {
     position: absolute;
     width: 100%;
     min-height: 101%;
@@ -15,7 +14,8 @@
     top: -1px; 
 }
 .bg-about__pic {
-    height: 29%;
+    position: absolute;
+    z-index: -5;
 }
 
 .bg-welcome__pic {
@@ -48,16 +48,21 @@
 .bg-values-hands__pic {
     position: absolute;
     height: 100%;
+    max-width: 43%;
     z-index: 1;
+    object-fit: contain;
     @include desktop {
         height: 80%;
         top: 33%;
+        max-width: 36%;
       }
     @include tablets {        
         transform: rotate(-90deg) scale(.63) translateX(-12.5rem) translateY(11.875rem);
+        max-width: 76%;
     }
     @include phones {
-        transform: rotate(-90deg) scaleY(0.25) scaleX(0.55)translateX(-29.5625rem) translateY(0%);
+        transform: rotate(-90deg) scaleY(0.55) scaleX(.55)translateX(-29.5625rem) translateY(0);
+        max-width: 102%;
     }
 }
 .bg-leaves__pic {

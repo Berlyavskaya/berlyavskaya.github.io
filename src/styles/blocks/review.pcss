@@ -1,12 +1,32 @@
 
 .review {
     position: relative;
-    max-width: 420px;
+    max-width: 504px;
     height: 100%;
     padding-left: 97px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @include tablets {
+     padding-left: 35px;
+  }
+    @include phones {
+      padding-left: 35px;
+  }
+}
+.reviews__heder {
+    width: 100%;
+    display: flex;
+    height: 20%;
+    @include tablets {
+      justify-content: space-between;
+   }
+    @include phones {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 30px;
+  }
 }
 .icon__quote {
     position: absolute;
@@ -16,6 +36,16 @@
     height: 63px;
     opacity: 0.05;
     fill: white;
+    @include tablets {
+      top:5px;
+      width: 30px;
+      height: 25px;
+  }
+    @include phones {
+      top:5px;
+      width: 30px;
+      height: 25px;
+  }
 }
 .review__text {  
   font-family: 'Open Sans';
@@ -28,4 +58,9 @@
   text-align: left;
   color: rgba(255, 255, 255, 0.5);
   margin-bottom: 30px;
+    @include phones {
+      font-size: 14px;
+      line-height: 1.71;
+  }
 }
+
