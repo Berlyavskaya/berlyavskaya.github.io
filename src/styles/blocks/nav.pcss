@@ -1,7 +1,18 @@
 .nav__list {
   display: flex;
   align-items: center;
-  font-size: 16px;  
+  font-size: 16px;
+    @include tablets {
+      display: flex;
+      flex-wrap: wrap;
+      height: 60px;
+      align-content: space-between;
+    } 
+    @include phones {
+      align-content: space-between;
+      height: 100px;
+    }
+   
 }
 
 .nav__item {
@@ -13,6 +24,15 @@
 }
 .nav__link {
   text-decoration: none;
+  z-index: 1;
+}
+.nav__link:hover{
+  padding-bottom: 20px;
+  border-bottom: 3px solid #ff9a00;
+  color: #ff9a00;
+  @include phones {
+    padding-bottom: 10px;
+  }
 }
 .footer__nav {
   color: white;

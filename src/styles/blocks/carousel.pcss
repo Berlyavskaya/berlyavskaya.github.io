@@ -1,17 +1,26 @@
 .carousel {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 920px;
+    
+    max-width: 940px;
+    @include tablets {
+        max-width: 770px;;
+     }
+    @include phones {
+        justify-content: center;
+    }
 }
-.carousel__list {
-    display: flex;
+/* .carousel__list {
+    height: 100%;
+    width: 100%;
+} */
+.carousel__item {   
+    width: 46%;
+    margin-right: 4%;
+    @include phones {
+        width: 100%;
+        margin-right: 0;
+    }
 }
-.carousel__item {
-    margin-right: 80px;
-}
-.carousel__item:last-child {
-    margin-right: 0;
-}
+
 .carousel__buttons {
     top: -145px;
     right: 270px;

@@ -4,46 +4,121 @@
 }
 .slider__preview {
     position: absolute;
-    top: 71%;
+    bottom: 60px;
     right: 0; 
+    @include phones {
+        display: none;
+      }
 }
 .slider__fillpic {
     object-fit: cover;
 }
 .slider__buttons {
     position: absolute;
-    top: 71%;
+    bottom: 60px;
     right: -50px;  
     width: 50px;
     height: 100px;
     box-sizing: border-box;
+    @include phones {
+        right: 0;
+      }
 }
-.slider__preview--active {
-    border: solid 3px #f29400;
-    background-color: #b6b6b6;
-}
+
 .previews {
     display: flex;
 }
 .previews__item {
     width: 178px;
     height: 100px;
+    overflow: hidden;
+}
+.active__previews {
+    border: 3px solid #5500f2;
+}
+.previews__link:hover  {
+    background-color: #5500f2;     
+}
+.previews__link {
+    display: block;     
+}
+.previews__pic {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.slider:before {
+    content: attr(data-slide);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-66%);
+    line-height: 1;
+    left: 100%;
+    font-size: 400px;
+    font-weight: 800;
+    margin-left: -7%;
+    color: rgba(#e6e6e6, 0.3);
+    z-index: -1;
+    @include desktop {
+      top: 0;
+      transform: translateY(-15%);
+      margin-left: -8%;
+    }
 }
 .wrappwer-works {
     display: flex;
+    @include tablets {
+        flex-direction: column;
+      }
 }
+
 .works__left {
     width: 66%;
+    @include desktop {
+        width: 55%;
+    }
+    @include tablets {
+        width: 85%;
+        margin-bottom: 65px;
+    }
+    @include phones {
+        width: 118%;
+        margin-left: -24px;
+      }
 }
 .works__right {
     width: 34%;
     padding-left: 157px;
+    @include desktop {
+        width: 45%;
+    }
+    @include tablets {
+        width: 100%;
+        padding-left: 0;
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;    
+    }
+    
 }
 .works__tags {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 40px;
+}
+.works__text {
+    @include tablets {  
+        width: 65%;      
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;    
+    }
+    @include phones {
+        width: 100%;
+        justify-content: flex-start;
+    }
 }
 .works__title {
     font-family: 'Open Sans';
@@ -67,6 +142,12 @@
     text-align: left;
     color: rgba(43, 57, 72, 0.7);
     margin-bottom: 50px;
+    @include tablets {  
+        text-align: center;  
+    }
+    @include phones {
+        text-align: left;
+    }
 }
 .iconed-link {
     position: relative;

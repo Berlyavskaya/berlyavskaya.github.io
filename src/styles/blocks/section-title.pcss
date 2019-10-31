@@ -16,3 +16,17 @@
 .section-title--contacts {
     margin-bottom: 100px;
 }
+.section-title--reviews {
+    @include phones {
+        margin-bottom: 30px;
+        font-size: 24px;
+    }
+}
+.section-title--contacts{
+    @include tablets {
+        text-align: center;
+      }
+      @include phones {
+        margin-bottom: 60px;
+    }
+}

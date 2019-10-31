@@ -8,4 +8,24 @@
     align-self: center;
     max-width: 590px;
     margin-bottom: 90px;
+    @include tablets {
+        flex-wrap: wrap;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        width: 56%;
+      }
+    @include phones {
+        width: 89%;    
+        text-align: left;
+    }
+}
+.section-title--values {
+    @include tablets {
+        width: 60%;
+      }
+    @include phones {
+        font-size: 24px;
+        width: 100%;
+    }
 }

@@ -1,0 +1,53 @@
+script(type="text/x-template")#carousel-review
+    .carousel
+        h2.section-title.section-title--reviews Что обо мне говорят
+        .carousel__buttons
+            .carousel-button
+                button(@click="previous()").carousel-buttons__item.carousel-buttons__item--slide--prev 
+                button(@click="next()").carousel-buttons__item.carousel-buttons__item--slide--next
+        
+        flickity.carousel__list(ref="flickity" :options="flickityOptions")                
+            div.carousel__item.carousel-cell
+                .review
+                    +icon("quote", "icon__quote")
+                    .review__text
+                        p 1 Эта девушка проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                    .card-person
+                        .avatar.avatar--card-person
+                            +image("content/user-kd.jpg", "avatar__pic")
+                        .card-person--desc
+                            p.card-person--name Ковальчук Дмитрий 
+                            p.card-person--post Основатель Loftschool
+            div.carousel__item.carousel-cell
+                .review
+                    +icon("quote", "icon__quote")
+                    .review__text
+                        p 2 Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                    .card-person
+                        .avatar.avatar--card-person
+                            +image("content/user-vs.jpg", "avatar__pic")
+                        .card-person--desc
+                            p.card-person--name Владимир Сабанцев 
+                            p.card-person--post Преподаватель
+            div.carousel__item.carousel-cell
+                .review
+                    +icon("quote", "icon__quote")
+                    .review__text
+                        p 3 Эта девушка проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                    .card-person
+                        .avatar.avatar--card-person
+                            +image("content/user-kd.jpg", "avatar__pic")
+                        .card-person--desc
+                            p.card-person--name Ковальчук Дмитрий 
+                            p.card-person--post Основатель Loftschool
+            div.carousel__item.carousel-cell
+                .review
+                    +icon("quote", "icon__quote")
+                    .review__text
+                        p 4 Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                    .card-person
+                        .avatar.avatar--card-person
+                            +image("content/user-vs.jpg", "avatar__pic")
+                        .card-person--desc
+                            p.card-person--name Владимир Сабанцев 
+                            p.card-person--post Преподаватель

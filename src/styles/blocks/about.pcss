@@ -1,11 +1,16 @@
 .about {  
+  position: relative;
   padding-bottom: 120px;
-  color: white;
+  color: white;                    
+  background-size: cover;
 }
 .about__container {
   display: flex;
   justify-content: space-between;
   max-width: 960px;
+  @include phones {
+    flex-wrap: wrap;
+  }
 }
 
 .about__left {
@@ -16,11 +21,19 @@
   font-style: normal;
   font-stretch: normal;
   box-sizing: border-box;
+  @include phones {
+    flex-wrap: wrap;
+    width: 100%;
+  }
 }
 
 .about__right {
   color: rgba(255, 255, 255, 0.5);
   width: 58%;
+  @include phones {
+    flex-wrap: wrap;
+    width: 100%;
+  }
 }
 
 .about__text, .about__ps {
@@ -34,6 +47,9 @@
 }
 .about__text {
   margin-bottom: 100px;
+  @include phones {
+    margin-bottom: 50px;
+  }
 }
 .about__ps {
   position: relative;

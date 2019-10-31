@@ -11,137 +11,140 @@ html(lang="en")
   body
     .wrapper
       .welcome-section
-          +image("bg-welcome.jpg", "bg-welcome__pic")
-          section.hero
-            .container.hero__container
-              header.hero__header
-                .hero__logo
-                  .logo КБ
-                .hero__menu 
-                  include ./components/nav.pug
-                .hero__links
-                  include ./components/links.pug
-              .hero__content
-                .container__user-info
-                  .user-info
-                    h1.user-info__desc Личный сайт веб разработчика
-                    .user-info__username Ксения Берлявская
-              .hero__btns
-                button.scroll-down-btns Скролл
-            
-          section.about
-            .container.about__container
-              .about__left
-                .user
-                  .avatar.user__avatar
-                    +image("content/user.jpg", "avatar__pic")
-                  table.user__desc
-                    -
-                      var tr = [
-                        ['Проживаю:', 'Санкт-Петербург'],
-                        ['Возраст:', '31 год'],
-                        ['Родилась:', '21 мая 1988']
-                      ]
-                    each item in tr
-                      tr.user__desc-item
-                        td.user__key #{item[0]}
-                        td.user__value #{item[1]}
-              .about__right
-                p.about__prolog Привет, меня зовут
-                h2.section-title.section-title--white Ксения Берлявская
-                .about__text Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-                .about__ps Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        +image("bg-welcome.jpg", "bg-welcome__pic")
+        .parallax__wrapper
+          .parallax__layer(data-speed ="0.1")
+            +image("parallax/p1.png", "parallax__image")
+          .parallax__layer(data-speed ="0.12")
+            +image("parallax/p2.png", "parallax__image")
+          .parallax__layer(data-speed ="0.15")
+            +image("parallax/p3.png", "parallax__image")
+          .parallax__layer(data-speed ="0.18")
+            +image("parallax/p4.png", "parallax__image")    
+
+        section.hero
+          .container.hero__container
+            header.hero__header
+              .hero__logo
+                .logo КБ
+              .hero__menu 
+                include ./components/nav.pug
+              .hero__links
+                include ./components/links.pug
+              a(href="#").hamburger-menu-link
+                .hamburger-menu-link__bars
+            .hero__content
+              .container__user-info
+                .user-info
+                  h1.user-info__desc Личный сайт веб разработчика
+                  p.user-info__username Ксения Берлявская
+            .hero__btns
+              button.scroll-down-btns Скролл
+          
+        section.about
+          .container.about__container
+            .about__left
+              .user
+                .avatar.user__avatar
+                  +image("content/user.jpg", "avatar__pic")
+                table.user__desc
+                  -
+                    var tr = [
+                      ['Проживаю:', 'Санкт-Петербург'],
+                      ['Возраст:', '31 год'],
+                      ['Родилась:', '21 мая 1988']
+                    ]
+                  each item in tr
+                    tr.user__desc-item
+                      td.user__key #{item[0]}
+                      td.user__value #{item[1]}
+            .about__right
+              p.about__prolog Привет, меня зовут
+              h2.section-title.section-title--white Ксения Берлявская
+              .about__text Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+              .about__ps Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 
       section.values
         +image("bg-values.jpg", "bg-values__pic")
         +image("bg-values-hands.png", "bg-values-hands__pic")
         .container.values__container
           .values__title
-            h2.section-title.section-title--white Чем я могу быть полезен вам
+            h2.section-title.section-title--white.section-title--values Чем я могу быть полезна вам
             .values__desc
               p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 
-          ul.users-skills    
-            -
-              var skills = [
-                ['Front-end', ['html', 'css', 'Javascript', 'Jquery и Vue.js']],
-                ['Workflow', ['GIT', 'Terminal', 'Gulp', 'Webpack']]
-              ]
-            each item in skills
-              li.user-skill__item.skills-row
-                h3.skills-row__title #{item[0]}
-                ul.skills-row__list
-                  each skill in item[1]
-                    li.skills-row__item
-                      .skill
-                        svg(viewBox="0 0 200 200" preserveAspectRatio="none").skill__shape
-                          circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position--under
-                          circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position--above
-                          //- linear-gradient(#ea7400, #f29400)
-                        .skill__title #{skill}
+          #skills-component
+            include ./components/skills.pug
+
       section.works
         .container
           h2.section-title.section-title--dark Мои работы
-          .wrappwer-works
-            .works__left
-              .slider
-                +image("content/prev.jpg", "slider__fillpic")
-                .slider__preview
-                  ul.previews
-                    - for (var i = 0; i < 4; i++)
-                      li.previews__item
-                        +image("content/prev-min-1.jpg", "previews__pic")                                              
-                .slider__buttons
-                  .slider-button
-                    button.slider-buttons__item.slider-buttons__item--slide--prev 
-                    button.slider-buttons__item.slider-buttons__item--slide--next
 
-            .works__right
-              .works__tags
-                ul.tags
-                  - var tags = ['html', 'css', 'javascript']
-                  each tag in tags
-                    li.tags__item #{tag}
-              .works__text
-                h3.works__title Сайт школы образования
-                .works__desc-text
-                  p Эта девушка проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                a(href="#").iconed-link Посмотреть сайт
+          #works-component
+            include ./components/works.pug
+
       .wrapper-two-section
         +image("bg-leaves.png", "bg-leaves__pic")
         +image("bg-forest.jpg", "bg-forest__pic")
         section.reviews
-          .container            
-            .carousel
-              h2.section-title.section-title--reviews Что обо мне говорят
-              .carousel__buttons
-                  .carousel-button
-                    button.carousel-buttons__item.carousel-buttons__item--slide--prev 
-                    button.carousel-buttons__item.carousel-buttons__item--slide--next
-              ul.carousel__list
-                li.carousel__item
-                  .review
-                    +icon("quote", "icon__quote")
-                    .review__text
-                      p Эта девушка проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                    .card-person
-                      .avatar.avatar--card-person
-                        +image("content/user-kd.jpg", "avatar__pic")
-                      .card-person--desc
-                        p.card-person--name Ковальчук Дмитрий 
-                        p.card-person--post Основатель Loftschool
-                li.carousel__item
-                  .review
-                    +icon("quote", "icon__quote")
-                    .review__text
-                      p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-                    .card-person
-                      .avatar.avatar--card-person
-                        +image("content/user-vs.jpg", "avatar__pic")
-                      .review__person--desc
-                        p.card-person--name Владимир Сабанцев 
-                        p.card-person--post Преподаватель
+          .container.carousel-container          
+            .carousel#carousel-container
+              .reviews__heder
+                h2.section-title.section-title--reviews Что обо мне говорят
+                .carousel__buttons
+                    .carousel-button
+                        button(@click="previous()" ref='buttun-prev').carousel-buttons__item.carousel-buttons__item--slide--prev 
+                        button(@click="next()" ref='buttun-next').carousel-buttons__item.carousel-buttons__item--slide--next
               
+              flickity.carousel__list(ref="flickity" :options="flickityOptions")                
+                  .carousel__item
+                      .review
+                          +icon("quote", "icon__quote")
+                          .review__text
+                              p 1 Эта девушка проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                          .card-person
+                              .avatar.avatar--card-person
+                                  +image("content/user-kd.jpg", "avatar__pic")
+                              .card-person--desc
+                                  p.card-person--name Ковальчук Дмитрий 
+                                  p.card-person--post Основатель Loftschool
+
+                  .carousel__item
+                      .review
+                          +icon("quote", "icon__quote")
+                          .review__text
+                              p 2 Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                          .card-person
+                              .avatar.avatar--card-person
+                                  +image("content/user-vs.jpg", "avatar__pic")
+                              .card-person--desc
+                                  p.card-person--name Владимир Сабанцев 
+                                  p.card-person--post Преподаватель
+
+                  .carousel__item
+                      .review
+                          +icon("quote", "icon__quote")
+                          .review__text
+                              p 3 Эта девушка проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                          .card-person
+                              .avatar.avatar--card-person
+                                  +image("content/user-kd.jpg", "avatar__pic")
+                              .card-person--desc
+                                  p.card-person--name Ковальчук Дмитрий 
+                                  p.card-person--post Основатель Loftschool
+
+                  .carousel__item
+                      .review
+                          +icon("quote", "icon__quote")
+                          .review__text
+                              p 4 Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                          .card-person
+                              .avatar.avatar--card-person
+                                  +image("content/user-vs.jpg", "avatar__pic")
+                              .card-person--desc
+                                  p.card-person--name Владимир Сабанцев 
+                                  p.card-person--post Преподаватель      
+                  
         section.contacts
           .container
             h2.section-title.section-title--contacts Связаться со мной
@@ -152,6 +155,7 @@ html(lang="en")
                     +icon("user", "icon__form")
                     .form__block-title Введите ваше имя
                     input.form__input(type="text" name="name")
+                    
                   label.form__block
                     +icon("envelope", "icon__form")
                     .form__block-title Введите ваш email
@@ -184,3 +188,4 @@ html(lang="en")
                 .footer__quote
                   p.footer__quote--text  Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
                   span.footer__quote--author Martin Golding
+
